@@ -60,13 +60,22 @@
 <script type="text/javascript">
 
 $("#id_filtro").click(function (){
-	var nombre = $("#id_nombre").val();
-	var dni = $("#id_dni").val();
+	const nombre = $("#id_nombre").val();
+	const dni = $("#id_dni").val();
 	
-	$.getJSON('listaAlumnoPorNombreYDni', {'nombre':nombre, 'dni':dni}, function(data){
-		agregarGrilla(data);
-	});
-	
+	if(nombre.length > 0 && dni.length > 0) {
+		$.getJSON('listaAlumnoPorNombreYDni', {'nombre':nombre, 'dni':dni}, function(data){
+			agregarGrilla(data);
+		});
+	} else if (nombre.length > 0 && !(dni.length > 0)) {
+		$.getJSON('listaAlumnoPorNombre', {'filtro':nombre}, function(data){
+			agregarGrilla(data);
+		});
+	} else {
+		$.getJSON("listaAlumnoPorDni",{'dni':dni}, function(data){
+			agregarGrilla(data);
+		});
+	}
 });
 
 function agregarGrilla(lista){
