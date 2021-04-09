@@ -47,12 +47,9 @@
 </div>
 
 <script type="text/javascript">
-
 $("#id_registrar").click(function (){ 
-
 	var validator = $('#id_form').data('bootstrapValidator');
 	validator.validate();
-
 	if (validator.isValid()){
 		$.ajax({
 			type: 'POST',  
@@ -70,15 +67,12 @@ $("#id_registrar").click(function (){
 	}
 	
 });
-
-
 function limpiar(){
 	$('#id_nombre').val('');
 	$('#id_dni').val('');
 	$('#id_correo').val('');
 	$('#id_fecha').val('');
 }
-
 $(document).ready(function() {
     $('#id_form').bootstrapValidator({
         message: 'This value is not valid',
@@ -134,14 +128,9 @@ $(document).ready(function() {
                 },
         }   
     });
-
     
 });
 </script>
 
 </body>
 </html>
-
-
-
-

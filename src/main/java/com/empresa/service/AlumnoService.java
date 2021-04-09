@@ -10,4 +10,5 @@ public interface AlumnoService {
 	public abstract List<Alumno> listaPorNombre(String nom);
 	public abstract List<Alumno> listaPorDni(String dni);
 	public abstract List<Alumno> listaAlumnoPorNombreYDni(String nombre, String dni);
+	
 }
