@@ -31,7 +31,7 @@ public class AlumnoServiceImpl implements AlumnoService{
 
 	@Override
 	public List<Alumno> listaAlumnoPorNombreYDni(String nombre, String dni) {
-		return repository.listaAlumnoPorNombreYDni(nombre+"%", dni+"%");
+		return repository.listaAlumnoPorNombreYDni(nombre+"%", dni);
 	}
 
 
